@@ -4,4 +4,7 @@ import shutil
 #для переноса файла
 
 start_file_path=easygui.fileopenbox() #определение пути к исходному файлу
-shutil.copy(start_file_path, "./music")
+try:
+    shutil.copy(start_file_path, "./music")
+except:
+    print("файл не выбран")
