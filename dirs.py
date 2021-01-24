@@ -2,18 +2,26 @@ import os
 from config import MUSIC_DIR
 
 os.chdir(MUSIC_DIR)
-songs=[]
-playlists=[]
 
+playlists=[]
+f={}
+songs=''
+class Playlist:
+    def __init__(self, name,autor, songs):
+        self.name=''
+        self.autor=''
+        self.songs=[]
+    
 for root, dirs, files in os.walk(".", topdown = False):
-    
-    
+
     for name in dirs:
         playlists.append(os.path.join(root, name))
-    
+        f[name]=name
     for playlist in playlists:
         for root,dirs, files in os.walk(playlist, topdown = False):
-            for name in files:
-                songs.append(os.path.join(root, name)) 
+            print(root)
+            for names in files:
+                #print(name)
+                f[name].append(os.path.join(names))
 
-print(songs,playlists)
+print(playlists,f)
