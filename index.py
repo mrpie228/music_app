@@ -1,7 +1,8 @@
 import eel
 
-eel.init('web')
-eel.start("main.html",height=700, wight=800)
 
 
-#if __name__ == '__main__':
+
+if __name__ == '__main__':
+    eel.init('web')
+    eel.start("main.html",height=700, wight=800)
